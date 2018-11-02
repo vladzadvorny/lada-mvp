@@ -1,30 +1,11 @@
-import _ from 'lodash'
-import { FETCH_ME } from '../types'
+import { SET_ME } from '../types'
 
-const initialState = {
-  data: {},
-  loading: false,
-  error: null
-}
+const initialState = {}
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case FETCH_ME:
-      return _.assign(state, {
-        loading: true
-      })
-
-    case `${FETCH_ME}_SUCCESS`:
-      return _.assign(state, {
-        data: action.payload.data,
-        loading: false
-      })
-
-    case `${FETCH_ME}_FAIL`:
-      return _.assign(state, {
-        error: action.payload.error,
-        loading: false
-      })
+    case SET_ME:
+      return action.payload
 
     default:
       return state

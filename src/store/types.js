@@ -1,1 +1,1 @@
-export const FETCH_ME = 'FETCH_ME'
+export const SET_ME = 'SET_ME'
