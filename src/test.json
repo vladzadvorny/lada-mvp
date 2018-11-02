@@ -1,0 +1,39 @@
+{
+  "config": {
+    "transformRequest": {},
+    "transformResponse": {},
+    "timeout": 0,
+    "xsrfCookieName": "XSRF-TOKEN",
+    "xsrfHeaderName": "X-XSRF-TOKEN",
+    "maxContentLength": -1,
+    "headers": { "Accept": "application/json, text/plain, */*" },
+    "method": "get",
+    "url": "http://192.168.1.53:3001/api/v1/me"
+  },
+  "request": {
+    "UNSENT": 0,
+    "OPENED": 1,
+    "HEADERS_RECEIVED": 2,
+    "LOADING": 3,
+    "DONE": 4,
+    "readyState": 4,
+    "status": 0,
+    "timeout": 0,
+    "withCredentials": true,
+    "upload": {},
+    "_aborted": false,
+    "_hasError": true,
+    "_method": "GET",
+    "_response": "Failed to connect to /192.168.1.53:3001",
+    "_url": "http://192.168.1.53:3001/api/v1/me",
+    "_timedOut": false,
+    "_trackingName": "unknown",
+    "_incrementalEvents": false,
+    "_requestId": null,
+    "_headers": { "accept": "application/json, text/plain, */*" },
+    "_responseType": "",
+    "_sent": true,
+    "_lowerCaseResponseHeaders": {},
+    "_subscriptions": []
+  }
+}
