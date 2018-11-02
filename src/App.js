@@ -1,6 +1,7 @@
 import React from 'react'
 import { Provider } from 'react-redux'
-import { NativeModules } from 'react-native'
+import { NativeModules, Text } from 'react-native'
+import { Font } from 'expo'
 // import axios from 'axios'
 
 import { store } from './store'
@@ -34,12 +35,20 @@ export default class App extends React.Component {
       UIManager.setLayoutAnimationEnabledExperimental(true)
     }
 
+    //
+
     this.cacheAssets()
   }
 
   cacheAssets = async () => {
     const imagesAssets = chacheImages([...Object.values(images)])
     await Promise.all([...imagesAssets])
+
+    await Font.loadAsync({
+      Roboto: require('../assets/fonts/Roboto-Regular.ttf'),
+      'Roboto-Bold': require('../assets/fonts/Roboto-Bold.ttf')
+    })
+
     this.setState({ isReady: true })
   }
 

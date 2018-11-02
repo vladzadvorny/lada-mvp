@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import axios from 'axios'
-import { AsyncStorage } from 'react-native'
+import { AsyncStorage, View } from 'react-native'
 
 import { baseUrl } from '../constants/config'
 import { setMe } from '../store/actions'
 
-import Loading from '../components/Loading'
+import BoardingLogo from '../components/BoardingLogo'
 
 class SplashScreen extends Component {
   componentWillMount() {
@@ -43,7 +43,17 @@ class SplashScreen extends Component {
   }
 
   render() {
-    return <Loading />
+    return (
+      <View
+        style={{
+          flex: 1,
+          justifyContent: 'center',
+          alignItems: 'center'
+        }}
+      >
+        <BoardingLogo />
+      </View>
+    )
   }
 }
 

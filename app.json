@@ -17,11 +17,18 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
+    },
+    "facebookAppId": "281125529397461",
+    "facebookScheme": "fb281125529397461",
+    "facebookDisplayName": "Intuitive Eating",
+    "extra": {
+      "googleAppId": {
+        "ios": "77868932054-b0a35f7tmkang3b4onoed1vp7kebodh9.apps.googleusercontent.com",
+        "android": "77868932054-c3t58hdvbv8gteemu8dbskcqene914da.apps.googleusercontent.com"
+      }
     }
   }
 }
