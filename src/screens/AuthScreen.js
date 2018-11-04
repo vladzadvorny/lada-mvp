@@ -5,6 +5,7 @@ import BoardingLogo from '../components/BoardingLogo'
 import AuthButton from '../components/AuthButton'
 import { colors } from '../constants/theme'
 import { Provider } from '../utils/providers'
+import { auth } from '../utils/auth'
 
 class AuthScreen extends Component {
   state = {
@@ -40,6 +41,7 @@ class AuthScreen extends Component {
     try {
       const token = await Provider.Google.loginAsync()
 
+      await auth(token, 'GOOGLE')
       console.log('token', token)
     } catch (error) {
       console.log('error', error)
@@ -50,6 +52,7 @@ class AuthScreen extends Component {
     try {
       const token = await Provider.Facebook.loginAsync()
 
+      await auth(token, 'FACEBOOK')
       console.log('token', token)
     } catch (error) {
       console.log('error', error)
