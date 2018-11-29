@@ -1,28 +1,31 @@
 import React from 'react'
 import { Provider } from 'react-redux'
-import { NativeModules, Text } from 'react-native'
+import { NativeModules, AsyncStorage } from 'react-native'
 import { Font } from 'expo'
-// import axios from 'axios'
+import axios from 'axios'
 
 import { store } from './store'
 import { chacheImages } from './utils/cacheImages'
 import { images } from './constants/images'
+import { NavigationService } from './utils/navigationService'
 
 import Navigation from './screens'
 import Loading from './components/Loading'
-// axios.interceptors.response.use(
-//   response => response,
-//   error => {
-//     console.log('Network Error', !error.response)
 
-//     console.log('Error status', error.response.status)
-//     if (error.response.status === 401) {
-//       console.log(401)
-//     }
+axios.interceptors.response.use(
+  response => response,
+  async error => {
+    // console.log('Network Error', !error.response)
 
-//     return Promise.reject(error)
-//   }
-// )
+    console.log('Error status', error.response.status)
+    if (error.response.status === 401) {
+      await AsyncStorage.removeItem('@token')
+      NavigationService.navigate('Splash')
+    }
+
+    return Promise.reject(error)
+  }
+)
 
 export default class App extends React.Component {
   state = {

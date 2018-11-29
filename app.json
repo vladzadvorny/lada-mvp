@@ -1,10 +1,9 @@
 {
   "expo": {
-    "name": "IEating",
-    "description": "This project is really great.",
-    "slug": "IEating",
+    "name": "mobile-next",
+    "slug": "mobile-next",
     "privacy": "public",
-    "sdkVersion": "30.0.0",
+    "sdkVersion": "31.0.0",
     "platforms": ["ios", "android"],
     "version": "1.0.0",
     "orientation": "portrait",

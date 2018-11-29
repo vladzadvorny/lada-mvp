@@ -1,5 +1,9 @@
 import React, { Component } from 'react'
-import { createSwitchNavigator, createStackNavigator } from 'react-navigation'
+import {
+  createSwitchNavigator,
+  createStackNavigator,
+  createAppContainer
+} from 'react-navigation'
 
 import { NavigationService } from '../utils/navigationService'
 
@@ -10,7 +14,7 @@ const AuthNavigator = createStackNavigator(
     }
   },
   {
-    navigationOptions: {
+    defaultNavigationOptions: {
       header: null
     }
   }
@@ -34,10 +38,12 @@ const AppNavigator = createSwitchNavigator(
   }
 )
 
+const AppContainer = createAppContainer(AppNavigator)
+
 class Navigation extends Component {
   render() {
     return (
-      <AppNavigator
+      <AppContainer
         ref={navigatorRef => {
           NavigationService.setTopLevelNavigator(navigatorRef)
         }}
